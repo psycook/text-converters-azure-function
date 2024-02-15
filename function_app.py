@@ -1,0 +1,11 @@
+import azure.functions as func
+from process_word_blueprint import process_word_blueprint
+from process_encoded_word_blueprint import process_encoded_word_blueprint
+from process_excel_blueprint import process_excel_blueprint
+from process_encoded_excel_blueprint import process_encoded_excel_blueprint
+
+app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
+app.register_functions(process_word_blueprint) 
+app.register_functions(process_encoded_word_blueprint) 
+app.register_functions(process_excel_blueprint)
+app.register_functions(process_encoded_excel_blueprint)
